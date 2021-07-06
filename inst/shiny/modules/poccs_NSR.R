@@ -1,4 +1,4 @@
-NSR_module_ui <- function(id) {
+poccs_NSR_module_ui <- function(id) {
   ns <- shiny::NS(id)
   tagList(
     # UI
@@ -13,7 +13,7 @@ NSR_module_ui <- function(id) {
 
 ########################################################
 
-NSR_module_server <- function(input, output, session, common) {
+poccs_NSR_module_server <- function(input, output, session, common) {
 
   logger <- common$logger
   spp <- common$spp
@@ -194,7 +194,7 @@ NSR_module_server <- function(input, output, session, common) {
 
 ##########################################################
 
-NSR_module_result <- function(id) {
+poccs_NSR_module_result <- function(id) {
   ns <- NS(id)
 
   # Result UI
@@ -203,7 +203,7 @@ NSR_module_result <- function(id) {
 
 #############################################################
 
-NSR_module_map <- function(map, common) {
+poccs_NSR_module_map <- function(map, common) {
   # Map logic
 
   curSp <- common$curSp
@@ -248,7 +248,7 @@ NSR_module_map <- function(map, common) {
 
 ###############################################################
 
-NSR_module_rmd <- function(species) {
+poccs_NSR_module_rmd <- function(species) {
   # Variables used in the module's Rmd code
   list(
     NSR_knit = species$rmm$code$wallace$someFlag,
