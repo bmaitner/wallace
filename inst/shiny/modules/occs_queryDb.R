@@ -39,7 +39,7 @@ occs_queryDb_module_ui <- function(id) {
                        value = "")), # Check default
     conditionalPanel(
       sprintf(
-        "(input['%1$s'] == 'gbif' & input['%2$s'] == false) | input['%1$s'] == 'vertnet' | input['%1$s'] == 'bison'" ,
+        "(input['%1$s'] == 'gbif' & input['%2$s'] == false) | input['%1$s'] == 'vertnet' | input['%1$s'] == 'bison'| input['%1$s'] == 'bien'" ,
         ns("occsDb"), ns("doCitations")),
       tags$div(
         title = paste0('Maximum number of occurrences recovered from ',
@@ -58,7 +58,7 @@ occs_queryDb_module_server <- function(input, output, session, common) {
 
   observeEvent(input$goDbOccs, {
     # WARNING ####
-    if ( input$occsDb!="bien" & input$occsNum < 1) {
+    if ( input$occsNum < 1) {
       logger %>% writeLog(type = 'warning',
                           "Enter a non-zero number of occurrences.")
       return()

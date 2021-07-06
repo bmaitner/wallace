@@ -1,0 +1,5 @@
+component: "poccs"
+short_name: "NSR"
+long_name: "Resolve Native Status"
+authors: "Brian S. Maitner, Cory Merow"
+package: [NSR]

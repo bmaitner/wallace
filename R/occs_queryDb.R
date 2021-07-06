@@ -151,7 +151,11 @@ occs_queryDb <- function(spNames, occDb, occNum = NULL, doCitations = FALSE,
         # myBTO <- occCite::studyTaxonList(x = sp, datasources = "NCBI")
         # myBTO <- occCite::occQuery(x = myBTO, datasources = 'bien', limit = occNum)
         # myOccCitations <- NULL
-        qBien <- BIEN::BIEN_occurrence_species(species = sp)
+        qBien <- BIEN::BIEN_occurrence_species(species = sp,
+                                               limit = occNum,native.status = T,
+                                               political.boundaries = T,
+                                               natives.only = F,
+                                               observation.type = T)
         # make something with the same slots as spocc that we use
         q <- list(bien = list(meta = list(found = NULL),
                               data = list(formatSpName(sp))))
